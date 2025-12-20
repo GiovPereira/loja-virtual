@@ -307,6 +307,14 @@ small{
     text-align: right;
 }
 
+.rodape-col-3 li{
+    cursor: pointer;
+}
+
+.rodape-col-4 li{
+    cursor: pointer;
+}
+
 ul{
     list-style-type: none;
 }
@@ -334,6 +342,54 @@ ul{
     width: 28px;
     margin-left: 20px;
     display: none;
+}
+
+/* LISTAGEM DE PRODUTOS */
+
+.novoMenu nav ul li a{
+    color: var(--cor-fonte);
+}
+
+.novoMenu{
+    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+.linha2{
+    margin: 100px auto 50px;
+}
+
+.linha2 select{
+    padding: 5px;
+    border: 1px solid var(--cor-btn-fonte);
+}
+
+.linha2 select:focus{
+    outline: none;
+}
+
+.paginacao{
+    margin: 0 auto 80px;
+}
+
+.paginacao span{
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    border: 1px solid var(--cor-btn);
+    text-align: center;
+    line-height: 40px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.logoRedesSociais{
+    width: 24px;
+    cursor: pointer;
+}
+
+.paginacao span:hover{
+    background-color: #e08ebb;
+    color: white;
 }
 
 /* RESPONSIVIDADE: TABLET E CELULAR */
@@ -364,6 +420,10 @@ ul{
         display: block;
         cursor: pointer;
     }
+
+    .novoMenu nav ul li a{
+        color: var(--cor-fonte);
+    }
 }
 
 @media only screen and (max-width:600px){
@@ -389,8 +449,10 @@ ul{
 
     .col-2 img{
         margin-top: 20px;
-    float: right;
+        float: right;
+    }
+
+    .novoMenu nav ul li a{
+        color: var(--cor-fonte);
     }
 }
-
-
