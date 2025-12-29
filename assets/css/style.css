@@ -13,7 +13,7 @@
     --cor-btn: #563434;
     --cor-btn-hover: #d49ecb;
     --cor-btn-fonte: #000;
-    --cor-fonte-corpo: $555;
+    --cor-fonte-corpo: #555;
     --cor-fonte-corpo-leve: #777;
 }
 
@@ -82,7 +82,7 @@ p{
     min-width: 300px;
 }
 
-.col-2 img{
+.col-2 .banner-1{
     float: right;
 }
 
@@ -392,6 +392,88 @@ ul{
     color: white;
 }
 
+/* DETALHES DO PRODUTO */
+
+.ver-produto{
+    margin-top: 40px;
+}
+
+.ver-produto .col-2 img{
+    padding: 0;
+    width: 100%;
+    display: block;
+}
+
+.ver-produto #produtoImg{
+    max-width: 600px;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+.ver-produto .col-2{
+    padding: 20px;
+}
+
+.ver-produto h4{
+    margin: 20px 0;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.ver-produto select{
+    display: block;
+    margin-top: 20px;
+    padding: 10px;
+    border: 2px solid #e08ebb;
+}
+
+.ver-produto select:focus{
+    outline: none;
+}
+
+.ver-produto input{
+    width: 50px;
+    height: 40px;
+    margin-right: 10px;
+    padding-left: 10px;
+    font-size: 20px;
+    border: 2px solid #e08ebb;
+}
+
+.ver-produto input:focus{
+    outline: none;
+}
+
+.ver-produto .btn{
+    border: none;
+    height: 42px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.ver-produto p{
+    font-size: 13px;
+}
+
+.ver-produto .linha{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.img-linha{
+    display: flex;
+    justify-content: space-between;
+}
+
+.img-col{
+    flex-basis: 24%;
+    cursor: pointer;
+}
+
+
 /* RESPONSIVIDADE: TABLET E CELULAR */
 
 @media only screen and (max-width:800px){
@@ -447,12 +529,25 @@ ul{
         font-size: 24px;
     }
 
-    .col-2 img{
+    .col-2 .banner-1{
         margin-top: 20px;
         float: right;
     }
 
     .novoMenu nav ul li a{
         color: var(--cor-fonte);
+    }
+
+    .ver-produto .col-2{
+        margin: 20px 0;
+    }
+
+    .ver-produto .linha{
+        text-align: left;
+    }
+
+    .ver-produto h1{
+        font-size: 26px;
+        line-height: 26px;
     }
 }
