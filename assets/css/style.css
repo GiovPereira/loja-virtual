@@ -473,6 +473,72 @@ ul{
     cursor: pointer;
 }
 
+/* CARRINHO DE COMPRAS */
+
+.imagem-carrinho{
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+.carrinho-compras{
+    margin: 80px auto;
+}
+
+.carrinho-compras table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.info-carrinho{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+th{
+    background-color: var(--cor-padrao);
+    color: #000;
+    text-align: left;
+    font-weight: normal;
+    padding: 5px;
+}
+
+td{
+    padding: 10px 5px;
+}
+
+td input{
+    width: 40px;
+    height: 30px;
+    padding: 5px;
+}
+
+td a{
+    color: var(--cor-btn);
+    font-size: 15px;
+}
+
+.valor-total{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.valor-total table{
+    border-top: 3px solid var(--cor-padrao);
+    width: 100%;
+    max-width: 420px;
+}
+
+td:last-child{
+    text-align: right;
+}
+
+th:last-child{
+    text-align: right;
+}
+
+/* CADASTRO E LOGIN */
+
 
 /* RESPONSIVIDADE: TABLET E CELULAR */
 
@@ -549,5 +615,9 @@ ul{
     .ver-produto h1{
         font-size: 26px;
         line-height: 26px;
+    }
+
+    .info-carrinho p{
+        display: none;
     }
 }
