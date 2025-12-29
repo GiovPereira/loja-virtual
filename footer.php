@@ -1,51 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Empresa</title>
-    <link rel="icon" href="assets/img/icon.png" />
-    <link rel="stylesheet" href="assets/css/style.css" class="" />
-  </head>
-  <body>
-    <div class="banner">
-      <div class="container">
-        <div class="navbar">
-          <div class="logo">
-            <a href="index.html">
-            <img src="assets/img/logo.png" alt="Athena" width="125px" />
-            </a>
-          </div>
-          <nav>
-            <ul id="MenuItens">
-              <li><a href="index.html" title="">Início</a></li>
-              <li><a href="produtos.html" title="">Produtos</a></li>
-              <li><a href="empresa.html" title="">Empresa</a></li>
-              <li><a href="contatos.html" title="">Contatos</a></li>
-              <li><a href="minha-conta.html" title="">Minha Conta</a></li>
-            </ul>
-          </nav>
-          <a href="carrinho.html">
-          <img
-            src="assets/img/carrinho2.png"
-            alt="Carrinho de Compras"
-            width="30px"
-            height="30px"
-          />
-          </a>
-          <img src="assets/img/menu.png" alt="" class="menu-celular" onclick="menucelular()">
-        </div>
-        
-        <div class="linha">
-          <div class="col-2 empresa">
-            <h2>Sobre Nós</h2>
-            <p>A Athenas é uma empresa de roupas fitness localizada em Juiz de Fora, Minas Gerais, criada para inspirar mulheres a se vestirem com confiança, estilo e performance em cada treino e em cada momento da rotina. Nossa missão vai além da moda: buscamos transformar energia em atitude e movimento em conquista.</p>
-          <div class="col-2"><img src="assets/img/banner-4.png" alt="" class="banner-4" /></div>
-        </div>
-      </div>
-    </div>
-
-    <footer class="rodape">
+<footer class="rodape">
 
       <div class="container">
         <div class="linha">
@@ -112,7 +65,7 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
-    <script src="assets/js/app.js"></script>
+    <script src="assets/js/login.js"></script>
 
   </body>
 
