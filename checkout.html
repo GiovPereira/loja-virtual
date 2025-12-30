@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Checkout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+
+<div class="novoMenu">
+  <div class="container">
+    <div class="navbar">
+      <a href="index.html">
+        <img src="assets/img/logo-2.png" width="125px">
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h2 class="titulo">Finalizar Compra</h2>
+
+  <table width="100%" id="tabela-carrinho">
+    <tr>
+      <th>Produto</th>
+      <th>Quantidade</th>
+      <th>Preço</th>
+    </tr>
+  </table>
+
+  <div class="total-carrinho">
+    <p>Subtotal: <span id="subtotal">R$ 0,00</span></p>
+    <p>Frete: <span id="frete">R$ 25,90</span></p>
+    <h3>Total: <span id="total">R$ 0,00</span></h3>
+
+    <button class="btn" onclick="finalizarCompra()">Finalizar Compra</button>
+  </div>
+</div>
+
+<script src="assets/js/checkout.js"></script>
+</body>
+</html>

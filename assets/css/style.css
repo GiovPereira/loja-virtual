@@ -654,6 +654,24 @@ th:last-child{
     margin-left: 165px;
 }
 
+/* DETALHES CARRINHO - BOTÃO */
+
+.btn-add-carrinho{
+    text-decoration: none;
+    color: var(--cor-padrao);
+    background: var(--cor-btn);
+    padding: 8px 30px;
+    margin: 30px 0;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.5s;
+}
+
+.btn-add-carrinho:hover{
+    background: var(--cor-btn-hover);
+    color: var(--cor-btn-fonte);
+}
+
 
 /* RESPONSIVIDADE: TABLET E CELULAR */
 

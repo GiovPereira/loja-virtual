@@ -1,30 +1,31 @@
-var MenuItens = document.getElementById("MenuItens");
+// Recupera o carrinho existente
+let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 
-MenuItens.style.maxHeight = "0px";
+// Evento dos botões "Adicionar ao Carrinho"
+document.querySelectorAll(".btn-add-carrinho").forEach(botao => {
+  botao.addEventListener("click", function () {
 
-function menucelular(){
-    if(MenuItens.style.maxHeight == "0px"){
-        MenuItens.style.maxHeight = "200px";
-    }else{
-        MenuItens.style.maxHeight = "0px";
+    const produto = {
+      id: botao.dataset.id,
+      nome: botao.dataset.nome,
+      preco: parseFloat(botao.dataset.preco),
+      quantidade: 1,
+      imagem: botao.dataset.imagem
+    };
+
+    // Verifica se o produto já existe
+    const existente = carrinho.find(p => p.id === produto.id);
+
+    if (existente) {
+      existente.quantidade++;
+    } else {
+      carrinho.push(produto);
     }
-}
 
-var produtoImg = document.getElementById("produtoImg");
-var produtoMiniatura = document.getElementsByClassName("produtoMiniatura");
+    // Salva no localStorage
+    localStorage.setItem("carrinho", JSON.stringify(carrinho));
 
-produtoMiniatura[0].onclick = function(){
-    produtoImg.src = produtoMiniatura[0].src;
-}
-
-produtoMiniatura[1].onclick = function(){
-    produtoImg.src = produtoMiniatura[1].src;
-}
-
-produtoMiniatura[2].onclick = function(){
-    produtoImg.src = produtoMiniatura[2].src;
-}
-
-produtoMiniatura[3].onclick = function(){
-    produtoImg.src = produtoMiniatura[3].src;
-}
+    // Redireciona para o carrinho
+    window.location.href = "carrinho.html";
+  });
+});
