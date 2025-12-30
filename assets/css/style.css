@@ -545,28 +545,30 @@ th:last-child{
 /* CADASTRO E LOGIN */
 
 .minha-conta{
-    padding: 50px 0;
+    padding: 80px 0;
     background-color: var(--cor-padrao);
 }
 
 .minha-conta .formulario{
     position: relative;
-    padding: 20px 0;
-    text-align: center;
-    width: 300px;
-    height: 400px;
+    width: 100%;
+    max-width: 420px;
+    height: 420px;
     margin: auto;
-    background-color: #bc9783;
-    box-shadow: 30px 0 20px 0 rgba(0, 0, 0, 0.1);
+    background-color: var(--cor-padrao);
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    border-radius: 8px;
     overflow: hidden;
+    text-align: center;
 }
+
 
 .formulario span{
     display: inline-block;
-    width: 100px;
-    padding: 0 10px;
-    font-weight: bold;
-    color: #333131;
+    width: 120px;
+    padding: 10px 0;
+    font-weight: 600;
+    color: var(--cor-fonte);
     cursor: pointer;
 }
 
@@ -574,65 +576,55 @@ th:last-child{
     display: inline-block;
 }
 
-.formulario form{
-    position: absolute;
-    top: 110px;
-    max-width: 300px;
-    padding: 0 20px;
-    transition: transform 1s;
-}
-
+.formulario form,
 .formulario .contato{
     position: absolute;
-    top: 110px;
-    max-width: 300px;
-    padding: 0 20px;
-    transition: transform 1s;
-}
-
-.formulario .contato{
-    position: absolute;
-    top: 110px;
-    max-width: 300px;
-    padding: 0 20px;
-    transition: transform 1s;
+    top: 100px;
+    width: 100%;
+    max-width: 420px;
+    padding: 0 30px;
+    transition: transform 0.8s ease;
 }
 
 .formulario form input{
     width: 100%;
-    height: 40px;
-    margin: 10px 0;
-    padding: 0 10px;
+    height: 42px;
+    margin: 12px 0;
+    padding: 0 12px;
     border: 1px solid var(--cor-btn);
-    border-radius: 3px;
+    border-radius: 5px;
+    font-size: 14px;
 }
 
 .formulario form input:focus{
     outline: none;
+    border-color: var(--cor-btn-hover);
 }
 
 .formulario form .btn{
     width: 100%;
-    margin: 10px 0;
+    margin-top: 15px;
     border: none;
-    border-radius: 4px;
+    border-radius: 30px;
     background-color: var(--cor-btn);
     cursor: pointer;
+    color: var(--cor-padrao);
 }
 
 .formulario form .btn:hover{
     background-color: var(--cor-btn-hover);
+    color: var(--cor-btn-fonte);
 }
 
 .formulario form a{
-    font-size: 12px;
+    font-size: 13px;
     text-decoration: none;
-    color: var(--cor-btn-fonte);
+    color: var(--cor-btn);
     cursor: pointer;
 }
 
 #entrarPainel{
-    left: -300px;
+    left: -420px;
 }
 
 #cadastroSite{
@@ -640,18 +632,18 @@ th:last-child{
 }
 
 #indicador{
-    width: 100px;
+    width: 120px;
     height: 3px;
     border: none;
-    background-color: var(--cor-padrao);
-    margin-top: 8px;
-    transform: translateX(100px);
-    transition: transform 1s;
+    background-color: var(--cor-btn);
+    margin: 10px auto 0;
+    transform: translateX(120px);
+    transition: transform 0.8s ease;
 }
 
 .minha-conta .banner-cad{
     width: auto;
-    margin-left: 165px;
+    margin-left: 0;
 }
 
 /* DETALHES CARRINHO - BOTÃO */
@@ -670,6 +662,74 @@ th:last-child{
 .btn-add-carrinho:hover{
     background: var(--cor-btn-hover);
     color: var(--cor-btn-fonte);
+}
+
+/* PÁGINA DE CHECKOUT */
+
+#form-checkout{
+    padding: 30px;
+    max-width: 500px;
+    margin: 60px auto;
+    background-color: var(--cor-padrao);
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    text-align: left;
+}
+
+#form-checkout h3{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: var(--cor-fonte);
+}
+
+#form-checkout input,
+#form-checkout select{
+    width: 100%;
+    height: 42px;
+    margin: 10px 0;
+    padding: 0 10px;
+    border: 1px solid var(--cor-btn);
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+#form-checkout input:focus,
+#form-checkout select:focus{
+    outline: none;
+    border-color: var(--cor-btn-hover);
+}
+
+#form-checkout label{
+    display: block;
+    margin: 10px 0;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#form-checkout input[type="radio"]{
+    width: auto;
+    height: auto;
+    margin-right: 6px;
+}
+
+#form-checkout .btn-finalizar{
+    text-decoration: none;
+    color: var(--cor-padrao);
+    background: var(--cor-btn);
+    padding: 8px 30px;
+    margin: 30px 0;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.5s;
+}
+
+#form-checkout .btn-finalizar:hover{
+    background: var(--cor-btn-hover);
+    color: var(--cor-btn-fonte);
+}
+
+#cartao-area{
+    margin-top: 10px;
 }
 
 
@@ -753,5 +813,10 @@ th:last-child{
 
     .info-carrinho p{
         display: none;
+    }
+
+    #form-checkout{
+        margin: 30px 15px;
+        padding: 20px;
     }
 }

@@ -1,7 +1,21 @@
-// Recupera o carrinho existente
+const entrarPainel = document.getElementById("entrarPainel");
+const cadastroSite = document.getElementById("cadastroSite");
+const indicador = document.getElementById("indicador");
+
+function Cadastrar() {
+  cadastroSite.style.transform = "translateX(0px)";
+  entrarPainel.style.transform = "translateX(0px)";
+  indicador.style.transform = "translateX(120px)";
+}
+
+function Entrar() {
+  cadastroSite.style.transform = "translateX(300px)";
+  entrarPainel.style.transform = "translateX(300px)";
+  indicador.style.transform = "translateX(0px)";
+}
+
 let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 
-// Evento dos botões "Adicionar ao Carrinho"
 document.querySelectorAll(".btn-add-carrinho").forEach(botao => {
   botao.addEventListener("click", function () {
 
@@ -13,7 +27,6 @@ document.querySelectorAll(".btn-add-carrinho").forEach(botao => {
       imagem: botao.dataset.imagem
     };
 
-    // Verifica se o produto já existe
     const existente = carrinho.find(p => p.id === produto.id);
 
     if (existente) {
@@ -22,10 +35,8 @@ document.querySelectorAll(".btn-add-carrinho").forEach(botao => {
       carrinho.push(produto);
     }
 
-    // Salva no localStorage
     localStorage.setItem("carrinho", JSON.stringify(carrinho));
 
-    // Redireciona para o carrinho
     window.location.href = "carrinho.html";
   });
 });

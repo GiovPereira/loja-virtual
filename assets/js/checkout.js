@@ -1,30 +1,29 @@
-let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+const form = document.getElementById("form-checkout");
+const cartaoArea = document.getElementById("cartao-area");
 
-function carregarCheckout() {
-  const tabela = document.getElementById("tabela-carrinho");
-  let subtotal = 0;
-
-  carrinho.forEach(item => {
-    const linha = document.createElement("tr");
-
-    linha.innerHTML = `
-      <td>${item.nome}</td>
-      <td>${item.quantidade}</td>
-      <td>R$ ${(item.preco * item.quantidade).toFixed(2)}</td>
-    `;
-
-    tabela.appendChild(linha);
-    subtotal += item.preco * item.quantidade;
+document.querySelectorAll('input[name="pagamento"]').forEach(radio => {
+  radio.addEventListener("change", () => {
+    if (radio.value === "cartao" && radio.checked) {
+      cartaoArea.style.display = "block";
+    } else {
+      cartaoArea.style.display = "none";
+    }
   });
+});
 
-  document.getElementById("subtotal").innerText = `R$ ${subtotal.toFixed(2)}`;
-  document.getElementById("total").innerText = `R$ ${(subtotal + 25.90).toFixed(2)}`;
-}
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
 
-function finalizarCompra() {
+  const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+
+  if (carrinho.length === 0) {
+    alert("Seu carrinho está vazio!");
+    return;
+  }
+
+  alert("Pagamento realizado com sucesso! 🎉");
+
   localStorage.removeItem("carrinho");
-  alert("Compra realizada com sucesso!");
-  window.location.href = "index.html";
-}
 
-document.addEventListener("DOMContentLoaded", carregarCheckout);
+  window.location.href = "index.html";
+});
