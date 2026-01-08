@@ -1,88 +1,121 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Checkout</title>
-    <link rel="icon" href="assets/img/icon.png" />
-    <link rel="stylesheet" href="assets/css/style.css" class="" />
-  </head>
-  <body>
-    <div class="novoMenu">
-      <div class="container">
-        <div class="navbar">
-          <div class="logo">
-            <a href="index.html">
-              <img src="assets/img/logo-2.png" alt="Athena" width="125px" />
-            </a>
-          </div>
-          <nav>
-            <ul id="MenuItens">
-              <li><a href="index.html" title="">Início</a></li>
-              <li><a href="produtos.html" title="">Produtos</a></li>
-              <li><a href="empresa.html" title="">Empresa</a></li>
-              <li><a href="contatos.html" title="">Contatos</a></li>
-              <li><a href="minha-conta.html" title="">Minha Conta</a></li>
-            </ul>
-          </nav>
-          <a href="carrinho.html">
-            <img
-              src="assets/img/carrinho2.png"
-              alt="Carrinho de Compras"
-              width="30px"
-              height="30px"
-            />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout</title>
+  <link rel="icon" href="assets/img/icon.png" />
+  <link rel="stylesheet" href="assets/css/style.css" class="" />
+</head>
+
+<body>
+  <div class="novoMenu">
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <a href="index.html">
+            <img src="assets/img/logo-2.png" alt="Athena" width="125px" />
           </a>
-          <img
-            src="assets/img/menu.png"
-            alt=""
-            class="menu-celular"
-            onclick="menucelular()"
-          />
         </div>
+        <nav>
+          <ul id="MenuItens">
+            <li><a href="index.html" title="">Início</a></li>
+            <li><a href="produtos.html" title="">Produtos</a></li>
+            <li><a href="empresa.html" title="">Empresa</a></li>
+            <li><a href="contatos.html" title="">Contatos</a></li>
+            <li><a href="minha-conta.html" title="">Minha Conta</a></li>
+          </ul>
+        </nav>
+        <a href="carrinho.html">
+          <img src="assets/img/carrinho2.png" alt="Carrinho de Compras" width="30px" height="30px" />
+        </a>
+        <img src="assets/img/menu.png" alt="" class="menu-celular" onclick="menucelular()" />
       </div>
     </div>
+  </div>
 
-<div class="corpo-categorias checkout">
+  <div class="corpo-categorias checkout">
 
-  <form id="form-checkout" class="form-checkout">
+    <form id="form-checkout" class="form-checkout">
 
-    <h3>Dados do Cliente</h3>
-    <input type="text" id="nome" placeholder="Nome completo" required>
-    <input type="email" id="email" placeholder="E-mail" required>
+      <h3>Dados do Cliente</h3>
+      <input type="text" id="nome" placeholder="Nome completo" required>
+      <input type="email" id="email" placeholder="E-mail" required>
 
-    <h3>Endereço</h3>
-    <input type="text" id="endereco" placeholder="Rua e número" required>
-    <input type="text" id="cidade" placeholder="Cidade" required>
-    <input type="text" id="cep" placeholder="CEP" required>
+      <h3>Endereço de Entrega</h3>
 
-    <h3>Pagamento</h3>
+      <input type="text" id="endereco" placeholder="Rua e número" required>
+      <input type="text" id="cidade" placeholder="Cidade" required>
 
-    <label>
-      <input type="radio" name="pagamento" value="pix" checked>
-      Pix
-    </label>
+      <div class="linha-frete">
+        <input type="text" id="cep" placeholder="CEP" required>
+        <button type="button" id="btn-calcular-frete" class="btn">
+          Calcular Frete
+        </button>
+      </div>
+      <p class="info-entrega">
+        Entrega padrão via Correios, com prazo estimado de 5 a 10 dias úteis,
+        de acordo com a região de destino.
+      </p>
 
-    <label>
-      <input type="radio" name="pagamento" value="cartao">
-      Cartão de Crédito
-    </label>
+      <p id="frete-resultado"></p>
 
-    <div id="cartao-area" style="display:none;">
-      <input type="text" placeholder="Número do cartão">
-      <input type="text" placeholder="Nome no cartão">
-      <input type="text" placeholder="Validade">
-      <input type="text" placeholder="CVV">
-    </div>
 
-    <button type="submit" class="btn-finalizar">
-      Confirmar Pedido
-    </button>
+      <h3>Pagamento</h3>
 
-  </form>
+      <p class="texto-parceiros">
+        Escolha uma das formas de pagamento disponíveis. Todas as transações são
+        processadas por parceiros financeiros reconhecidos no mercado.
+      </p>
 
-</div>
-<footer class="rodape">
+      <label>
+        <input type="radio" name="pagamento" value="pix" checked>
+        PIX <span class="parceiro">(Banco Central do Brasil)</span>
+      </label>
+
+      <label>
+        <input type="radio" name="pagamento" value="boleto">
+        Boleto Bancário <span class="parceiro">(Banco do Brasil)</span>
+      </label>
+
+      <label>
+        <input type="radio" name="pagamento" value="cartao">
+        Cartão de Crédito
+        <span class="parceiro">(Visa / Mastercard / Elo)</span>
+      </label>
+
+      <div id="cartao-area" style="display:none;">
+        <input type="text" placeholder="Número do cartão">
+        <input type="text" placeholder="Nome no cartão">
+        <input type="text" placeholder="Validade">
+        <input type="text" placeholder="CVV">
+
+        <select id="parcelas">
+          <option value="1">1x sem juros</option>
+          <option value="2">2x sem juros</option>
+          <option value="3">3x sem juros</option>
+          <option value="6">6x sem juros</option>
+        </select>
+      </div>
+
+      <div class="parceiros-pagamento">
+        <img src="assets/img/pix.png" alt="PIX">
+        <img src="assets/img/visa.png" alt="Visa">
+        <img src="assets/img/mastercard.png" alt="Mastercard">
+        <img src="assets/img/boleto.png" alt="Boleto Bancário">
+        <img src="assets/img/elo.png" alt="Elo">
+      </div>
+
+
+      <button type="submit" class="btn-finalizar">
+        Confirmar Pedido
+      </button>
+
+    </form>
+
+  </div>
+  <footer class="rodape">
 
     <div class="container">
       <div class="linha">
@@ -130,6 +163,16 @@
           </ul>
         </div>
 
+        <div class="rodape-col-5">
+          <h3>Newsletter</h3>
+          <p>Assine nossa newsletter e receba novidades e promoções.</p>
+
+          <form class="newsletter-form">
+            <input type="email" placeholder="Digite seu e-mail" required>
+            <button type="submit">Assinar</button>
+          </form>
+        </div>
+
       </div>
       <hr>
       <div class="direitos">
@@ -139,8 +182,9 @@
 
   </footer>
 
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-<script src="assets/js/checkout.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="assets/js/checkout.js"></script>
 </body>
+
 </html>
